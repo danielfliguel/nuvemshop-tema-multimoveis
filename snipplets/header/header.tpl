@@ -5,6 +5,7 @@
 {# Header #}
 
 {% set show_transparent_head = template == 'home' and settings.head_transparent and settings.slider and not settings.slider is empty %}
+{% set has_header_menu_top = settings.header_menu_top and settings.header_menu_top_show %}
 
 <header class="js-head-main head-main head-{{ settings.head_background }} {% if settings.head_fix %}head-fix{% endif %} transition-soft" data-store="head">
 
@@ -32,7 +33,7 @@
         </section>
     {% endif %}
 	<div class="container-fluid {% if settings.head_utility == 'searchbox' %}pb-3 pb-md-0{% endif %}">
-		<div class="{% if not settings.head_fix %}js-nav-logo-bar{% endif %} row no-gutters align-items-center">
+		<div class="{% if not settings.head_fix %}js-nav-logo-bar{% endif %} row no-gutters">
 
             {# Menu icon for all mobile combinations except when categories are exposed and logo is centered #}
             {% if settings.head_utility == 'searchbox' or settings.head_utility == 'icons' or (settings.logo_position_mobile == 'left' and settings.head_utility == 'categories') %}
@@ -58,19 +59,22 @@
 
             {# Logo for mobile and desktop #}
 
-			<div class="{% if settings.logo_position_desktop == 'center' %}{% if settings.icons_size_desktop == 'big' %}col-md-6 col-lg-6{% else %}col-md-4 col-lg-4{% endif %}{% else %}col-md-3 col-lg-3{% endif %} {% if settings.logo_position_mobile == 'left' %}col text-left{% else %}col text-center{% endif %} {% if settings.logo_position_desktop == 'center' %}text-md-center {% if settings.icons_size_desktop == 'small' %}offset-md-1{% endif %} order-md-2{% else %}text-md-left{% endif %}">
+			<div class="{% if settings.logo_position_desktop == 'center' %}{% if settings.icons_size_desktop == 'big' %}col-md-6 col-lg-6{% else %}col-md-4 col-lg-4{% endif %}{% else %}col-md-3 col-lg-2{% endif %} {% if settings.logo_position_mobile == 'left' %}col text-left{% else %}col text-center{% endif %} {% if settings.logo_position_desktop == 'center' %}text-md-center {% if settings.icons_size_desktop == 'small' %}offset-md-1{% endif %} order-md-2{% else %}{% endif %}">
                 {% snipplet "header/header-logo.tpl" %}
             </div>
 
             {# Desktop Search, used on mobile when setting is set to show "big search" #}
 
             <div class="{% if settings.head_utility == 'searchbox' %}col-12 order-last order-md-0{% else %}col-6 d-none d-md-block{% endif %} text-center {% if settings.logo_position_desktop == 'center' %}col-md-3 col-lg-3 order-md-1{% elseif settings.icons_size_desktop == 'small' and settings.logo_position_desktop == 'left' %}col-md-6 col-lg-5{% else %}col-md-6 col-lg-6{% endif %}">
+                {% if has_header_menu_top %}
+                    {% snipplet "navigation/navigation-header-top.tpl" %}    
+                {% endif %}
                 {% snipplet "header/header-search.tpl" %}
             </div>
 
             {# Utility icons: Help, Account and Cart (also used on mobile) #}
 
-			<div class="col-auto {% if settings.logo_position_mobile == 'left' %}order-3{% elseif settings.logo_position_mobile == 'center' and settings.head_utility == 'icons' %}order-last{% endif %} {% if settings.icons_size_desktop == 'small' %}col-md-4 col-lg-4{% else %}col-md-3 col-lg-3{% endif %} text-right {% if settings.logo_position_desktop == 'center' %}order-md-3{% endif %}">
+			<div class="col-auto {% if settings.logo_position_mobile == 'left' %}order-3{% elseif settings.logo_position_mobile == 'center' and settings.head_utility == 'icons' %}order-last{% endif %} {% if settings.icons_size_desktop == 'small' %}col-md-4 col-lg-4{% else %}col-md-3 col-lg-4{% endif %} text-right {% if settings.logo_position_desktop == 'center' %}order-md-3{% endif %}">
                 {% snipplet "header/header-utilities.tpl" %}
                 {% if settings.head_fix and settings.ajax_cart %}
                     <div class="d-none d-md-block">

@@ -134,6 +134,14 @@ Encabezado
 			light = Color de fondo
 			dark = Color de textos
 			primary = Color principal
+	title
+		title = Menu topo
+	checkbox
+		name = header_menu_top_show
+		description = Mostrar menú
+	menu
+		name = header_menu_top
+		description = ¿Qué menú vas a mostrar al final de la página?
 	checkbox
 		name = head_fix
 		description = Encabezado siempre visible al navegar la tienda
@@ -527,6 +535,25 @@ Página de inicio
 		description = Texto del botón
 	i18n_input
 		name = banner_promotional_03_url
+		description = Link
+	subtitle
+		subtitle = PROMOCIÓN 4
+	checkbox
+		name = banner_promotional_04_show
+		description = Mostrar banner
+	image
+		original = banner_promotional_04.jpg
+		title = Cargar imagen (JPG, GIF, PNG)
+		width = 620
+		height = 715
+	i18n_input
+		name = banner_promotional_04_title
+		description = Título
+	i18n_input
+		name = banner_promotional_04_button
+		description = Texto del botón
+	i18n_input
+		name = banner_promotional_04_url
 		description = Link
 	collapse
 		title = Newsletter

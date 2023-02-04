@@ -70,6 +70,10 @@
 
         {{ 'css/style-colors.scss.tpl' | static_url | static_inline }}
 
+        {# Custom CSS #}
+
+        {{ 'css/custom.scss.tpl' | static_url | static_inline }}
+
         {# Load async styling not mandatory for first meaningfull paint #}
 
         {% include "static/js/load-css-async.tpl" %}

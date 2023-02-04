@@ -23,17 +23,17 @@
     <div class="row">
         
         {% if featured_products and settings.featured_products_title %}
-            <div class="col-12 text-center">
+            <div class="col-12 text-left">
                 <h3 class="h1{% if settings.theme_rounded %} text-primary{% endif %}">{{ settings.featured_products_title }}</h3>
             </div>
         {% endif %}
         {% if new_products and settings.new_products_title %}
-            <div class="col-12 text-center">
+            <div class="col-12 text-left">
                 <h3 class="h1{% if settings.theme_rounded %} text-primary{% endif %}">{{ settings.new_products_title }}</h3>
             </div>
         {% endif %}
         {% if sale_products and settings.sale_products_title %}
-            <div class="col-12 text-center">
+            <div class="col-12 text-left">
                 <h3 class="h1{% if settings.theme_rounded %} text-primary{% endif %}">{{ settings.sale_products_title }}</h3>
             </div>
         {% endif %}

@@ -1554,12 +1554,12 @@ es_mx "La página que buscas no existe."
 --- --- Login
 
 es "Iniciá sesión"
-pt "Iniciar sessão"
+pt "Entre"
 en "Log in"
 es_mx "Inicia sesión"
 
 es "Iniciar sesión"
-pt "Iniciar sessão"
+pt "Entre"
 en "Log in"
 es_mx "Iniciar sesión"
 
@@ -1631,7 +1631,7 @@ es_mx "Superaste la cantidad de intentos permitidos. <br> Vuelve a probar en"
 --- --- Register
 
 es "Crear cuenta"
-pt "Criar uma conta"
+pt "cadastre-se"
 en "Register"
 es_mx "Crear una cuenta"
 
