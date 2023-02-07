@@ -60,6 +60,11 @@ header > .container-fluid > .row:first-child{
     position: relative;
 }
 
+.section-promotional-banners-home > .container{
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .textbanner-text.over-image{
     top: 80%;
 }
@@ -75,20 +80,205 @@ header > .container-fluid > .row:first-child{
     border-radius: 10px;
 }
 
-.section-featured-home .h1{
+.section-featured-home .h1, .section-banners-home .h1{
     color: #3E3E3E!important;
     font-size: 24px!important;
     margin: 15px 0;
 }
 
-{# Repsonsivo #}
+.js-item-product .js-item-name, .js-item-product .js-price-display{
+    color: #3E3E3E;
+    font-weight: 600;
+}
+
+.js-item-product .item-link{
+    text-align: left;
+}
+
+.js-item-product .js-item-name{
+    font-size: 16px;
+}
+
+.section-featured-home, .section-brands-home{
+    margin-bottom: 15px!important;
+}
+
+.item-rounded{
+    border: none;
+}
+
+.item-rounded .item-image{
+    border-radius: 11px;
+}
+
+.item-product:hover{
+    box-shadow: none;
+}
+
+.js-item-product .js-price-display{
+    font-size: 24px;
+}
+
+.svg-icon-text.svg-circle{
+    border: none;
+}
+
+{# Banners de categorias #}
+.section-banners-home > .container{
+    background: #ffffff;
+}
+
+{# Newsletter #}
+
+.form-newsletter{
+    gap: 10px;
+    align-items: center;
+}
+
+.section-newsletter-home{
+    background: #E5E5E5;
+    margin-bottom: 25px!important;
+    padding: 15px 0;
+}
+
+.section-newsletter-home > .container:first-child{
+    background: #294FDE!important;
+    border-radius: 11px;
+    padding: 1rem;
+}
+
+.actions-below-newsletter a{
+    background: #D9D9D9;
+    border-radius: 11px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.form-newsletter .form-group{
+    margin-bottom: 0;
+}
+
+.form-control-big, .form-select-big, .form-quantity-big {
+    padding: 13px 15px;
+    border-radius: 0;
+}
+
+#email::placeholder, #name::placeholder{
+    color: #929292;
+}
+
+.section-newsletter-home .row > div{
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+
+.newsletter form .newsletter-btn{
+    position: relative!important;
+    top: inherit!important;
+    right: inherit!important;
+    width: 20%!important;
+    height: 44px!important;
+    text-indent: 0!important;
+    background: #80D48B;
+    color: #ffffff;
+}
+
+{# Marcas #}
+.section-brands-home{
+    background: #ffffff;
+}
+
+{# Footer #}
+footer .h3{
+    font-size: 16px!important;
+    font-weight: 600;
+}
+
+{# Tela do produto #}
+.js-product-variants-group .form-label{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.main-buy-button{
+    display: flex;
+    position: relative;
+}
+
+.main-buy-button svg{
+    position: absolute;
+    left: 15px;
+    top: 8px;
+}
+
+.js-addtocart.js-prod-submit-form{
+    border-radius: 11px;
+    background: #80D48B;
+    font-size: 24px;
+    letter-spacing: 2px;
+    padding: 8px;
+}
+
+.js-price-display.text-primary{
+    font-size: 32px;
+}
+
+.form-select.js-variation-option{
+    background: #ffffff;
+    padding: 7px 35px 7px 12px;
+}
+
+.form-group .form-select-icon{
+    bottom: 7px;
+    background: transparent;
+}
+
+{# Responsivo #}
 @media (min-width: 768px){
     .utilities-item{
         padding: 0px 0px 0px 15px;
     }
 
+    .utilities-container > .utilities-item{
+        width: 40%
+    }
+
+    .utilities-container > .utilities-item:last-child{
+        width: 20%
+    }
+
     .badge-amount {
-        right: 40px;
+        right: 0px;
         top: 30px;
+    }
+
+    .item-rounded .item-actions {
+        background: #ffffff;
+        box-shadow: none;
+    }
+
+    .item-rounded .item-description {
+        border: none!important;
+    }
+
+    .form-newsletter > div:first-child, .form-newsletter > div:nth-child(2){
+        width: 40%;
+    }
+
+    .newsletter-btn{
+        width: 20%;
+    }
+}
+
+@media (min-width: 1100px){
+    .section-featured-home .swiper-button-prev{
+        left: 75px;
+    }
+
+    .section-featured-home .swiper-button-next{
+        right: 75px;
     }
 }

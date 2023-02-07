@@ -29,7 +29,7 @@
 	{#  **** Features Order ****  #}
 	{% set newArray = [] %}
 
-	{% for section in ['home_order_position_1', 'home_order_position_2', 'home_order_position_3', 'home_order_position_4', 'home_order_position_5', 'home_order_position_6', 'home_order_position_7', 'home_order_position_8', 'home_order_position_9',  'home_order_position_10'] %}
+	{% for section in ['home_order_position_1', 'home_order_position_2', 'home_order_position_3', 'home_order_position_4', 'home_order_position_5', 'home_order_position_6', 'home_order_position_7', 'home_order_position_8', 'home_order_position_9',  'home_order_position_10', 'home_order_position_11'] %}
 	    {% set section_select = attribute(settings,"#{section}") %}
 
 	    {% if section_select not in newArray %}
@@ -73,6 +73,11 @@
 
 		        {#  **** Sale products ****  #}
 				{% include 'snipplets/home/home-featured-products.tpl' with {'has_sale': true} %}
+
+			{% elseif section_select == 'selection' %}
+
+		        {#  **** Selection products ****  #}
+				{% include 'snipplets/home/home-featured-products.tpl' with {'has_selection': true} %}
 
 			{% elseif section_select == 'instafeed' %}
 

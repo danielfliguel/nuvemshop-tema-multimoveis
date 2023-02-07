@@ -1,4 +1,4 @@
-<section class="section-banners-home py-3 mb-0">
+<section class="section-promotional-banners-home py-3 mb-0">
     <div class="container{% if settings.banner_promotional_full %}-fluid{% endif %}">
         <div class="row">
             {% set num_banners = 0 %}
@@ -32,7 +32,7 @@
                                     {% if has_banner_text %}
                                         <div class="textbanner-text{% if textoverimage %} over-image{% endif %}">
                                             {% if banner_title %}
-                                                <div class="h2">{{ banner_title }}</div>
+                                                <div class="h3">{{ banner_title }}</div>
                                             {% endif %}
                                             {% if banner_url and banner_button_text %}
                                                 <div class="btn btn-secondary btn-small invert mt-3">{{ banner_button_text }}</div>

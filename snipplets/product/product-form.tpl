@@ -1,20 +1,3 @@
-{# Product name and breadcrumbs #}
-
-{% embed "snipplets/page-header.tpl" %}
-	{% block page_header_text %}{{ product.name }}{% endblock page_header_text %}
-{% endembed %}
-
-{# Product price #}
-
-<div class="price-container" data-store="product-price-{{ product.id }}">
-    <span class="d-inline-block">
-	   <h4 id="compare_price_display" class="js-compare-price-display price-compare font-weight-normal {% if product_can_show_installments or (product.promotional_offer and not product.promotional_offer.script.is_percentage_off) %}mb-2{% endif %}" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %} style="display:block;"{% endif %}>{% if product.compare_at_price and product.display_price %}{{ product.compare_at_price | money }}{% endif %}</h4>
-    </span>
-    <span class="d-inline-block">
-    	<h2 class="js-price-display text-primary {% if product_can_show_installments or (product.promotional_offer and not product.promotional_offer.script.is_percentage_off) %}mb-2{% endif %}" id="price_display" {% if not product.display_price %}style="display:none;"{% endif %} data-product-price="{{ product.price }}">{% if product.display_price %}{{ product.price | money }}{% endif %}</h2>
-    </span>
-</div>
-
 {# Promotional text #}
 
 {% if product.promotional_offer and not product.promotional_offer.script.is_percentage_off and product.display_price %}
@@ -55,6 +38,17 @@
         {% include "snipplets/product/product-variants.tpl" with {show_size_guide: true} %}
     {% endif %}
 
+    {# Product price #}
+
+    <div class="price-container" data-store="product-price-{{ product.id }}">
+        <span class="d-inline-block">
+        <h4 id="compare_price_display" class="js-compare-price-display price-compare font-weight-normal {% if product_can_show_installments or (product.promotional_offer and not product.promotional_offer.script.is_percentage_off) %}mb-2{% endif %}" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %} style="display:block;"{% endif %}>{% if product.compare_at_price and product.display_price %}{{ product.compare_at_price | money }}{% endif %}</h4>
+        </span>
+        <span class="d-inline-block">
+            <h2 class="js-price-display text-primary {% if product_can_show_installments or (product.promotional_offer and not product.promotional_offer.script.is_percentage_off) %}mb-2{% endif %}" id="price_display" {% if not product.display_price %}style="display:none;"{% endif %} data-product-price="{{ product.price }}">{% if product.display_price %}{{ product.price | money }}{% endif %}</h2>
+        </span>
+    </div>
+
     {% set show_product_quantity = product.available and product.display_price %}
 
     {% if settings.last_product and show_product_quantity %}
@@ -69,11 +63,16 @@
         {% endif %}
         {% set state = store.is_catalog ? 'catalog' : (product.available ? product.display_price ? 'cart' : 'contact' : 'nostock') %}
         {% set texts = {'cart': "Agregar al carrito", 'contact': "Consultar precio", 'nostock': "Sin stock", 'catalog': "Consultar"} %}
-        <div class="col-8 pr-0">
+        <div class="col-12 pr-0">
 
             {# Add to cart CTA #}
-
-            <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block mb-4 {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
+            
+            <label class="main-buy-button">
+                <svg width="28" height="33" viewBox="0 0 28 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 10.3125V8.25C22 3.7009 18.4112 0 14 0C9.58875 0 6 3.7009 6 8.25V10.3125H0V27.8438C0 30.6915 2.23856 33 5 33H23C25.7614 33 28 30.6915 28 27.8438V10.3125H22ZM10 8.25C10 5.97545 11.7944 4.125 14 4.125C16.2056 4.125 18 5.97545 18 8.25V10.3125H10V8.25ZM20 15.9844C19.1716 15.9844 18.5 15.2918 18.5 14.4375C18.5 13.5832 19.1716 12.8906 20 12.8906C20.8284 12.8906 21.5 13.5832 21.5 14.4375C21.5 15.2918 20.8284 15.9844 20 15.9844ZM8 15.9844C7.17156 15.9844 6.5 15.2918 6.5 14.4375C6.5 13.5832 7.17156 12.8906 8 12.8906C8.82844 12.8906 9.5 13.5832 9.5 14.4375C9.5 15.2918 8.82844 15.9844 8 15.9844Z" fill="white"/>
+                </svg>
+                <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block mb-4 {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
+            </label>
 
             {# Fake add to cart CTA visible during add to cart event #}
 

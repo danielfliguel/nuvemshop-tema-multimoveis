@@ -1,6 +1,6 @@
 {# Product quantity #}
         
-<div class="col-4">
+<div class="col-12">
     {% embed "snipplets/forms/form-input.tpl" with{
     type_number: true, input_value: '1',
     input_name: 'quantity' ~ item.id, 

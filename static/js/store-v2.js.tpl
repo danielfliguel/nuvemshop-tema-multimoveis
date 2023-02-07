@@ -810,8 +810,9 @@ DOMContentLoaded.addEventOrExecute(() => {
         {% set has_featured_products_slider = sections.primary.products and settings.featured_products_format != 'grid' %}
         {% set has_new_products_slider = sections.new.products and settings.new_products_format != 'grid' %}
         {% set has_sale_products_slider = sections.sale.products and settings.sale_products_format != 'grid' %}
+        {% set has_selection_products_slider = sections.selection.products and settings.selection_products_format != 'grid' %}
 
-        {% if has_featured_products_slider or has_new_products_slider or has_sale_products_slider %}
+        {% if has_featured_products_slider or has_new_products_slider or has_sale_products_slider or has_selection_products_slider %}
 
             var lazyVal = true;
             var watchOverflowVal = true;
@@ -889,6 +890,33 @@ DOMContentLoaded.addEventOrExecute(() => {
                     navigation: {
                         nextEl: '.js-swiper-sale-next',
                         prevEl: '.js-swiper-sale-prev',
+                    },
+                    slidesPerView: slidesPerViewMobileVal,
+                    breakpoints: {
+                        768: {
+                            slidesPerView: slidesPerViewDesktopVal,
+                        }
+                    }
+                });
+
+            {% endif %}
+
+            {% if has_selection_products_slider %}
+
+                window.swiperLoader('.js-swiper-selection', {
+                    lazy: lazyVal,
+                    watchOverflow: watchOverflowVal,
+                    centerInsufficientSlides: centerInsufficientSlidesVal,
+                    threshold: 5,
+                    watchSlideProgress: true,
+                    watchSlidesVisibility: true,
+                    slideVisibleClass: 'js-swiper-slide-visible',
+                {% if sections.selection.products | length > 3 %}
+                    loop: true,
+                {% endif %}
+                    navigation: {
+                        nextEl: '.js-swiper-selection-next',
+                        prevEl: '.js-swiper-selection-prev',
                     },
                     slidesPerView: slidesPerViewMobileVal,
                     breakpoints: {

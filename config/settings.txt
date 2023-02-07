@@ -396,6 +396,17 @@ Página de inicio
 		name = sale_products_title
 		description = Título para los productos en oferta
 	subtitle
+		subtitle = Seleções
+	dropdown
+		name = selection_products_format
+		description = Mostrar los productos como:
+		values
+			grid = Grilla
+			slider = Carrusel
+	i18n_input
+		name = selection_products_title
+		description = Título para los productos en oferta
+	subtitle
 		subtitle = <a target='_blank' href='/admin/themes/settings/product_order/'>Elegí cuáles vas a destacar</a>
 
 	collapse
@@ -461,6 +472,63 @@ Página de inicio
 		description = Descripción
 	i18n_input
 		name = banner_03_url
+		description = Link
+	subtitle
+		subtitle = CATEGORÍA 4
+	checkbox
+		name = banner_04_show
+		description = Mostrar banner
+	image
+		original = banner_04.jpg
+		title = Cargar imagen (JPG, GIF, PNG)
+		width = 620
+		height = 715
+	i18n_input
+		name = banner_04_title
+		description = Título
+	i18n_input
+		name = banner_04_description
+		description = Descripción
+	i18n_input
+		name = banner_04_url
+		description = Link
+	subtitle
+		subtitle = CATEGORÍA 5
+	checkbox
+		name = banner_05_show
+		description = Mostrar banner
+	image
+		original = banner_05.jpg
+		title = Cargar imagen (JPG, GIF, PNG)
+		width = 620
+		height = 715
+	i18n_input
+		name = banner_05_title
+		description = Título
+	i18n_input
+		name = banner_05_description
+		description = Descripción
+	i18n_input
+		name = banner_05_url
+		description = Link
+	subtitle
+		subtitle = CATEGORÍA 6
+	checkbox
+		name = banner_06_show
+		description = Mostrar banner
+	image
+		original = banner_06.jpg
+		title = Cargar imagen (JPG, GIF, PNG)
+		width = 620
+		height = 715
+	i18n_input
+		name = banner_06_title
+		description = Título
+	i18n_input
+		name = banner_06_description
+		description = Descripción
+	i18n_input
+		name = banner_06_url
 		description = Link
 
 	collapse
@@ -598,6 +666,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -614,6 +683,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -630,6 +700,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -646,6 +717,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -662,6 +734,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -678,6 +751,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -694,6 +768,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -710,6 +785,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -726,6 +802,7 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno
@@ -742,6 +819,24 @@ Página de inicio
 			new = Productos nuevos
 			video = Video
 			sale = Productos en oferta
+			selection = Produtos selecionados
+			instafeed = Publicaciones de Instagram
+			newsletter = Newsletter
+			empty = Ninguno
+	dropdown
+		name = home_order_position_11
+		description = Posición 11
+		values
+			welcome = Mensaje institucional
+			products = Productos destacados
+			informatives = Información de envíos, pagos y compra
+			categories = Banners de categorías
+			promotional = Banners promocionales
+			brands = Carrusel de marcas
+			new = Productos nuevos
+			video = Video
+			sale = Productos en oferta
+			selection = Produtos selecionados
 			instafeed = Publicaciones de Instagram
 			newsletter = Newsletter
 			empty = Ninguno

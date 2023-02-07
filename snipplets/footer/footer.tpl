@@ -13,11 +13,22 @@
 <footer class="js-hide-footer-while-scrolling display-when-content-ready" data-store="footer">
 	<div class="container-fluid px-md-5">
 		<div class="row element-footer">
-			
+			<div class="col-12">
+				{% if has_payment_logos %}
+					<div class="row mb-4 justify-content-center">
+						<div class="col-md-12">
+							<h4 class="h3">{{ "Medios de pago" | translate }}</h4>
+						</div>
+						<div class="col-md-12">
+							{% include "snipplets/logos-icons.tpl" with {'payments': true} %}
+						</div>
+					</div>
+				{% endif %}
+			</div>
 			{% if template != 'password' %}
 
 				{# About #}
-				{% if has_footer_about %}
+				<!--{% if has_footer_about %}
 
 					<div class="col-md mb-4">
 						{% if settings.footer_about_title %}
@@ -28,7 +39,15 @@
 						{% endif %}
 					</div>
 
-				{% endif %}
+				{% endif %}-->
+
+				<div class="col-md mb-4">
+					<img src="{{ 'images/logo-footer.png' | static_url }}" class="footer-logo lazyload" alt="Logo reduzido">
+					{% if has_shipping_logos %}
+						<p class="mt-3 mb-2">{{ "Medios de envío" | translate }}</p>
+						{% include "snipplets/logos-icons.tpl" with {'shipping': true} %}
+					{% endif %}
+				</div>
 
 				{# Foot Nav #}
 				{% if has_footer_menu %}
@@ -69,7 +88,26 @@
 					{% if settings.footer_social_title %}
 						<h4 class="h3">{{ settings.footer_social_title }}</h4>
 					{% endif %}
-					{% include "snipplets/social/social-links.tpl" with {'circle': true} %}
+					{% include "snipplets/social/social-links.tpl" %}
+					<h4 class="h3 mt-3">Certificações</h4>
+					{% if "seal_img.jpg" | has_custom_image or settings.custom_seal_code %}
+						{% if "seal_img.jpg" | has_custom_image %}
+							<div class="footer-logo custom-seal">
+								{% if settings.seal_url != '' %}
+									<a href="{{ settings.seal_url | setting_url }}" target="_blank">
+								{% endif %}
+									<img width="150" src="{{ 'images/empty-placeholder.png' | static_url }}" data-src="{{ "seal_img.jpg" | static_url }}" class="custom-seal-img lazyload" alt="{{ 'Sello de' | translate }} {{ store.name }}" />
+								{% if settings.seal_url != '' %}
+									</a>
+								{% endif %}
+							</div>
+						{% endif %}
+						{% if settings.custom_seal_code %}
+							<div class="footer-logo custom-seal custom-seal-code">
+								{{ settings.custom_seal_code | raw }}
+							</div>
+						{% endif %}
+					{% endif %}
 				</div>
 
 			{% elseif show_help %}
@@ -103,7 +141,7 @@
 
 				<div class="row element-footer">
 
-					{# Logos Payments and Shipping #}
+					<!--{# Logos Payments and Shipping #}
 			 		{% if has_shipping_payment_logos %}
 			 			<div class="col-md-9">
 				 			<div class="footer-payments-shipping-logos">
@@ -129,7 +167,7 @@
 				 				{% endif %}
 							</div>
 						</div>
-					{% endif %}
+					{% endif %}-->
 
 					{# AFIP - EBIT - Custom Seal #}
 					{% if has_seal_logos %}
@@ -144,7 +182,7 @@
 		                            {{ ebit }}
 		                        </div>
 		                    {% endif %}
-		                    {% if "seal_img.jpg" | has_custom_image or settings.custom_seal_code %}
+		                    <!--{% if "seal_img.jpg" | has_custom_image or settings.custom_seal_code %}
 			                    {% if "seal_img.jpg" | has_custom_image %}
 			                        <div class="footer-logo custom-seal">
 			                            {% if settings.seal_url != '' %}
@@ -161,7 +199,7 @@
 			                            {{ settings.custom_seal_code | raw }}
 			                        </div>
 			                    {% endif %}
-				            {% endif %}
+				            {% endif %}-->
 		 				</div>
 					{% endif %}
 

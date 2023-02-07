@@ -3,6 +3,10 @@
 
 <div id="single-product" class="js-has-new-shipping js-product-detail js-product-container js-shipping-calculator-container" data-variants="{{product.variants_object | json_encode }}">
     <div class="container">
+        {# Product name and breadcrumbs #}
+        {% embed "snipplets/page-header.tpl" %}
+            {% block page_header_text %}{{ product.name }}{% endblock page_header_text %}
+        {% endembed %}
         <div class="row section-single-product">
             <div class="col-12 col-md-8 pl-md-3 pr-md-3">
             	{% include 'snipplets/product/product-image.tpl' %}
