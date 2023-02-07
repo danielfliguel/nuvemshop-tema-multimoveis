@@ -4398,7 +4398,7 @@ es_mx "<a target='_blank' href='https://ayuda.tiendanube.com/es_ES/123225-edicio
 --- --- Shipping and Payments
 
 es "Medios de envío"
-pt "Meios de envio"
+pt "Calcule seu frete"
 en "Shipping Methods"
 es_mx "Opciones de envío"
 

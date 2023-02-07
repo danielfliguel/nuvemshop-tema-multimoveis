@@ -43,7 +43,7 @@
 {% if related_products | length > 0 %}
     <div class="row">
         {% if settings.products_related_title %}
-            <div class="col-12 text-center">
+            <div class="col-12 text-left">
                 <h3 class="h1{% if settings.theme_rounded %} text-primary{% endif %}">{{ settings.products_related_title }}</h3>
             </div>
         {% endif %}

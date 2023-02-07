@@ -1,4 +1,4 @@
-<section class="section-promotional-banners-home py-3 mb-0">
+<section class="section-promotional-banners-home py-lg-3 p-2 p-lg-none mb-0">
     <div class="container{% if settings.banner_promotional_full %}-fluid{% endif %}">
         <div class="row">
             {% set num_banners = 0 %}
@@ -20,7 +20,7 @@
                 {% set has_banner =  banner_show and (banner_title or banner_image) %}
                 {% set has_banner_text =  banner_title or banner_button_text %}
                 {% if has_banner %}
-                    <div class="col-md-{% if num_banners == 1 %}6 offset-md-3{% elseif num_banners == 2 %}6{% elseif num_banners == 3 %}4{% elseif num_banners == 4 %}3{% endif %}">
+                    <div class="col-lg-{% if num_banners == 1 %}6 offset-md-3{% elseif num_banners == 2 %}6{% elseif num_banners == 3 %}4{% elseif num_banners == 4 %}3 col-6 mb-3 mb-lg-0{% endif %}">
                         <div class="textbanner{% if settings.theme_rounded %} box-rounded textbanner-shadow{% endif %}">
                             {% if banner_url %}
                                 <a class="textbanner-link" href="{{ banner_url | setting_url }}"{% if banner_title %} title="{{ banner_title }}" aria-label="{{ banner_title }}"{% else %} title="{{ 'Banner de' | translate }} {{ store.name }}" aria-label="{{ 'Banner de' | translate }} {{ store.name }}"{% endif %}>

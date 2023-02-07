@@ -4,10 +4,10 @@
     <section class="section-newsletter-home">
         <div class="container">
             <div class="row justify-content-center align-items-center">
-                <div class="col-md-1 text-center">
+                <div class="col-lg-1 col-3 text-center">
                     <img class="w-100" src="{{ 'images/newsletter.png' | static_url }}" class="newsletter-logo lazyload" alt="Envelope branco">
                 </div>
-                <div class="col-md-4 text-left">
+                <div class="col-lg-4 col-9 mb-3 mb-lg-0 text-left">
                     {% if settings.news_title %}
                         <h4 class="mb-2">{{ settings.news_title }}</h3>
                     {% endif %}
@@ -49,18 +49,6 @@
                 </div>
             </div>
         </div>
-        <div class="actions-below-newsletter container py-2">
-            <div class="row">
-                <div class="col-md-2">
-                    <a href="#">Rastrear meu <b>pedido</b></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#">Ajuda com meu <b>pedido</b></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="#">Preciso de <b>atendimento</b></a>
-                </div>
-            </div>
-        </div>
+        {% include "snipplets/help-buttons.tpl" %}
     </section>
 {% endif %}

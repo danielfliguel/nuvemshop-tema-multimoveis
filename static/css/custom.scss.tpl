@@ -16,6 +16,10 @@
     height: 36px;
 }
 
+.search-input-submit svg{
+    fill: #294fde;
+}
+
 .search-input::placeholder{
     color: #999999!important;
 }
@@ -39,6 +43,11 @@ header > .container-fluid > .row:first-child{
 .head-primary .badge {
     color: #ffffff;
     background: #80D48B;
+}
+
+{# Banner rotativo #}
+.section-slider {
+    height: auto;
 }
 
 {# Banners de serviços #}
@@ -80,7 +89,7 @@ header > .container-fluid > .row:first-child{
     border-radius: 10px;
 }
 
-.section-featured-home .h1, .section-banners-home .h1{
+.section-featured-home .h1, .section-banners-home .h1, #related-products .h1{
     color: #3E3E3E!important;
     font-size: 24px!important;
     margin: 15px 0;
@@ -155,6 +164,7 @@ header > .container-fluid > .row:first-child{
     align-items: center;
     justify-content: center;
     gap: 4px;
+    font-size: 13px;
 }
 
 .form-newsletter .form-group{
@@ -186,6 +196,14 @@ header > .container-fluid > .row:first-child{
     color: #ffffff;
 }
 
+.form-newsletter > div:first-child, .form-newsletter > div:nth-child(2){
+    width: 40%;
+}
+
+.newsletter-btn{
+    width: 20%;
+}
+
 {# Marcas #}
 .section-brands-home{
     background: #ffffff;
@@ -214,7 +232,7 @@ footer .h3{
     top: 8px;
 }
 
-.js-addtocart.js-prod-submit-form{
+#single-product .js-addtocart.js-prod-submit-form{
     border-radius: 11px;
     background: #80D48B;
     font-size: 24px;
@@ -233,6 +251,37 @@ footer .h3{
 
 .form-group .form-select-icon{
     bottom: 7px;
+    background: transparent;
+}
+
+.form-control.js-shipping-input{
+    border: 1px solid #0F0F0F;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.product-description-title{
+    color: #294FDE;
+    border-bottom: 1px solid #294FDE;
+    padding-bottom: 15px;
+}
+
+.js-shipping-calculator-label-default{
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.js-calculate-shipping.btn{
+    border-radius: 5px;
+    background: #294FDE;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0px;
+    padding: 8px 12px 8px 12px;
+}
+
+#related-products .item-rounded .item-actions{
     background: transparent;
 }
 
@@ -263,14 +312,6 @@ footer .h3{
     .item-rounded .item-description {
         border: none!important;
     }
-
-    .form-newsletter > div:first-child, .form-newsletter > div:nth-child(2){
-        width: 40%;
-    }
-
-    .newsletter-btn{
-        width: 20%;
-    }
 }
 
 @media (min-width: 1100px){
@@ -280,5 +321,36 @@ footer .h3{
 
     .section-featured-home .swiper-button-next{
         right: 75px;
+    }
+
+    .product-description-title{
+        padding-left: 75px;
+    }
+}
+
+@media (max-width: 550px){
+    #ajax-cart svg{
+        width: 30px;
+    }
+
+    .search-input-submit svg{
+        fill: #ffffff;
+    }
+
+    .logo-img{
+        max-height: 90px;
+        margin: 0;
+    }
+
+    header>.container-fluid>.row:first-child {
+        height: auto;
+    }
+
+    header > .container-fluid >  .row.no-gutters{
+        align-items: center;
+    }
+
+    h3, .h3 {
+        font-size: 14px;
     }
 }

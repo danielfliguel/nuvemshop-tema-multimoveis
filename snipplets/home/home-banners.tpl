@@ -23,7 +23,7 @@
                 {% set has_banner =  banner_show and (banner_title or banner_description or banner_image) %}
                 {% set has_banner_text =  banner_title or banner_description %}
                 {% if has_banner %}
-                    <div class="col-md-{% if num_banners == 1 %}6 offset-md-3{% elseif num_banners == 2 %}6{% elseif num_banners == 3 %}4{% elseif num_banners == 4 %}3{% elseif num_banners == 5 %}{% elseif num_banners == 6 %}2{% endif %}">
+                    <div class="col-lg-{% if num_banners == 1 %}6 offset-md-3{% elseif num_banners == 2 %}6{% elseif num_banners == 3 %}4{% elseif num_banners == 4 %}3{% elseif num_banners == 5 %}{% elseif num_banners == 6 %}2 col-6 mb-3 mb-lg-0{% endif %}">
                         <div class="textbanner{% if settings.theme_rounded %} textbanner-shadow{% endif %}">
                             {% if banner_url %}
                                 <a class="textbanner-link" href="{{ banner_url | setting_url }}"{% if banner_title %} title="{{ banner_title }}" aria-label="{{ banner_title }}"{% else %} title="{{ 'Banner de' | translate }} {{ store.name }}" aria-label="{{ 'Banner de' | translate }} {{ store.name }}"{% endif %}>
