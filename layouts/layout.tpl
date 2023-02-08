@@ -163,7 +163,7 @@
 
         {# Page content #}
 
-        {% if template != 'home' or (template == 'home' and settings.slider is empty) %}
+        {% if (template != 'home' and template != 'product') or (template == 'home' and settings.slider is empty) %}
 
         <div class="mt-4">
 

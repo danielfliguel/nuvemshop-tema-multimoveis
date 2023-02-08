@@ -1,6 +1,6 @@
 {# Header #}
-.section-informative-banners, .account-page, .section-footer{
-    margin-bottom: 0;
+.section-informative-banners, .account-page, .section-footer, .section-products-related{
+    margin-bottom: 0!important;
 }
 
 {# Header #}
@@ -48,6 +48,11 @@ header > .container-fluid > .row:first-child{
 {# Banner rotativo #}
 .section-slider {
     height: auto;
+}
+
+.js-swiper-home-next, .js-swiper-home-prev{
+    background: #F4F4F4;
+    border-radius: 0;
 }
 
 {# Banners de serviços #}
@@ -215,6 +220,21 @@ footer .h3{
     font-weight: 600;
 }
 
+footer{
+    margin-top: 0!important;
+    padding-top: 0!important;
+}
+
+.white-line-bottom{
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: 25px;
+}
+
+.red-line-top{
+    border-top: 8px solid #F22E62;
+    padding-top: 25px;
+}
+
 {# Tela do produto #}
 .js-product-variants-group .form-label{
     font-size: 16px;
@@ -224,6 +244,10 @@ footer .h3{
 .main-buy-button{
     display: flex;
     position: relative;
+}
+
+#single-product, #related-products{
+    background: #F4F4F4;
 }
 
 .main-buy-button svg{
@@ -247,6 +271,7 @@ footer .h3{
 .form-select.js-variation-option{
     background: #ffffff;
     padding: 7px 35px 7px 12px;
+    border-color: #0F0F0F;
 }
 
 .form-group .form-select-icon{
@@ -285,6 +310,18 @@ footer .h3{
     background: transparent;
 }
 
+.js-addtocart.js-prod-submit-form:hover, .js-addtocart.js-prod-submit-form:focus{
+    opacity: 1;
+}
+
+.product-description p, .product-description{
+    margin-bottom: 0;
+}
+
+.js-quantity.form-quantity{
+    background: #ffffff;
+}
+
 {# Responsivo #}
 @media (min-width: 768px){
     .utilities-item{
@@ -311,6 +348,12 @@ footer .h3{
 
     .item-rounded .item-description {
         border: none!important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .container {
+        max-width: 768px!important;
     }
 }
 

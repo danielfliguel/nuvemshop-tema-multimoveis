@@ -12,8 +12,8 @@
 {% set show_help = not has_products and not has_social_network %}
 <footer class="js-hide-footer-while-scrolling display-when-content-ready" data-store="footer">
 	<div class="container-fluid px-md-5">
-		<div class="row element-footer">
-			<div class="col-12">
+		<div class="row element-footer red-line-top">
+			<div class="col-12 white-line-bottom">
 				{% if has_payment_logos %}
 					<div class="row mb-4 justify-content-center">
 						<div class="col-md-12">
@@ -137,7 +137,7 @@
 
 			{% if has_shipping_payment_logos or has_seal_logos %}
 
-				<div class="divider mb-5"></div>
+				<!--<div class="divider mb-5"></div>-->
 
 				<div class="row element-footer">
 

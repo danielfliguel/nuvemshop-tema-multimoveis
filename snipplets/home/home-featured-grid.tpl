@@ -45,7 +45,7 @@
             </div>
         {% endif %}
         {% if use_slider %}
-            <div class="col-12 px-5">
+            <div class="col-12 px-lg-5">
                 <div class="js-swiper-{% if featured_products %}featured{% elseif new_products %}new{% elseif selection_products %}selection{% else %}sale{% endif %} swiper-container p-md-1">
                     <div class="swiper-wrapper">
         {% endif %}

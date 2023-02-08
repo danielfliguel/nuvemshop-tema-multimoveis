@@ -65,7 +65,7 @@
 
             {# Desktop Search, used on mobile when setting is set to show "big search" #}
 
-            <div class="{% if settings.head_utility == 'searchbox' %}col-12 order-last order-md-0{% else %}col-6 d-none d-md-block{% endif %} text-center {% if settings.logo_position_desktop == 'center' %}col-md-3 col-lg-3 order-md-1{% elseif settings.icons_size_desktop == 'small' and settings.logo_position_desktop == 'left' %}col-md-6 col-lg-5{% else %}col-md-6 col-lg-6{% endif %}">
+            <div class="{% if settings.head_utility == 'searchbox' %}col-12 order-last order-md-0{% else %}col-6 d-none d-lg-block d-md-flex align-items-center{% endif %} text-center {% if settings.logo_position_desktop == 'center' %}col-md-3 col-lg-3 order-md-1{% elseif settings.icons_size_desktop == 'small' and settings.logo_position_desktop == 'left' %}col-md-6 col-lg-5{% else %}col-md-4 col-lg-6{% endif %}">
                 {% if has_header_menu_top %}
                     {% snipplet "navigation/navigation-header-top.tpl" %}    
                 {% endif %}
@@ -74,7 +74,7 @@
 
             {# Utility icons: Help, Account and Cart (also used on mobile) #}
 
-			<div class="col-auto {% if settings.logo_position_mobile == 'left' %}order-3{% elseif settings.logo_position_mobile == 'center' and settings.head_utility == 'icons' %}order-last{% endif %} {% if settings.icons_size_desktop == 'small' %}col-md-4 col-lg-4{% else %}col-md-3 col-lg-4{% endif %} text-right {% if settings.logo_position_desktop == 'center' %}order-md-3{% endif %}">
+			<div class="col-auto {% if settings.logo_position_mobile == 'left' %}order-3{% elseif settings.logo_position_mobile == 'center' and settings.head_utility == 'icons' %}order-last{% endif %} {% if settings.icons_size_desktop == 'small' %}col-md-4 col-lg-4{% else %}col-md-5 col-lg-4{% endif %} text-right {% if settings.logo_position_desktop == 'center' %}order-md-3{% endif %}">
                 {% snipplet "header/header-utilities.tpl" %}
                 {% if settings.head_fix and settings.ajax_cart %}
                     <div class="d-none d-md-block">

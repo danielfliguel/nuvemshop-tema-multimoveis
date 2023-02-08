@@ -1,7 +1,7 @@
 
 {# Payments details #}
 
-<div id="single-product" class="js-has-new-shipping js-product-detail js-product-container js-shipping-calculator-container" data-variants="{{product.variants_object | json_encode }}">
+<div id="single-product" class="pt-4 js-has-new-shipping js-product-detail js-product-container js-shipping-calculator-container" data-variants="{{product.variants_object | json_encode }}">
     <div class="container">
         {# Product name and breadcrumbs #}
         {% embed "snipplets/page-header.tpl" %}
@@ -34,11 +34,10 @@
 
             {# Product share #}
 
-            <!--{% include 'snipplets/social/social-share.tpl' %}-->
+            {#% include 'snipplets/social/social-share.tpl' %#}
         </div>
     </div>
 </div>
 
 {# Related products #}
 {% include 'snipplets/product/product-related.tpl' %}
-{% include "snipplets/help-buttons.tpl" %}
